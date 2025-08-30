@@ -20,6 +20,8 @@ public class NinjaModel {
 
     private String nome;
 
+    // Essa coluna é única sem items repetidos
+    @Column(unique = true)
     private String email;
 
     private int idade;
