@@ -1,11 +1,16 @@
 package dev.java10x.CadastroDeNinjas.Missoes;
 import dev.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
 @Table(name="tb_missoes")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MissoesModel {
 
     @Id // Marcar o ID como PK dessa tabela
@@ -21,8 +26,4 @@ public class MissoesModel {
     //mappedBy = nome da coluna da outra classe que vamos trabalhar
     @OneToMany(mappedBy = "missoes")
     private List<NinjaModel> ninja;
-
-
-
-
 }
