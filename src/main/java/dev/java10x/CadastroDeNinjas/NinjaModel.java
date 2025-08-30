@@ -9,10 +9,10 @@ public class NinjaModel {
 
     @Id // Irá marcar o Long id como chave primária(PK) da tabela. Sempre o atributo logo abaixo do @Id sera a PK.
     @GeneratedValue(strategy = GenerationType.IDENTITY) // estratégia pra gerar o Id automaticamente
-    Long id;
-    String nome;
-    String email;
-    int idade;
+    private Long id;
+    private String nome;
+    private String email;
+    private int idade;
 
     public NinjaModel() {
     }

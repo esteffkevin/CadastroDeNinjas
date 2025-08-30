@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping
+@RequestMapping // Define qual rota (URL) será usada para acessar a classe ou métod0.
+// assim evitando repetiçao como no exemplo abaixo /boasvindas. rota única.
 
 public class NinjaController {
 
