@@ -16,14 +16,20 @@ public class NinjaModel {
 
     @Id // Irá marcar o Long id como chave primária(PK) da tabela. Sempre o atributo logo abaixo do @Id sera a PK.
     @GeneratedValue(strategy = GenerationType.IDENTITY) // estratégia pra gerar o Id automaticamente
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "nome")
     private String nome;
 
     // Essa coluna é única sem items repetidos
     @Column(unique = true)
     private String email;
 
+    @Column(name = "img_url")
+    private String imgUrl;
+
+    @Column(name = "idade")
     private int idade;
 
     //@ManyToOne
