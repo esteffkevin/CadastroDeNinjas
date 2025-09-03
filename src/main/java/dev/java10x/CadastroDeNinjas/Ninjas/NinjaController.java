@@ -1,8 +1,6 @@
 package dev.java10x.CadastroDeNinjas.Ninjas;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping // Define qual rota (URL) será usada para acessar a classe ou métod0.
@@ -11,9 +9,39 @@ import org.springframework.web.bind.annotation.RestController;
 public class NinjaController {
 
     @GetMapping("/boasvindas")
-    public String boasVindas(){
+    public String boasVindas() {
         return "Essa é a minha primeira mensagem nessa rota";
+    }
 
+    // CRUD (Create, Read, Update, Read)
+    // Adicionar Ninja (CREATE)
+    @PostMapping("/criar")
+    public String criarNinja() {
+        return "Ninja criado: ";
+    }
+
+    // Mostrar todos os ninjas (READ)
+    @GetMapping("/todos")
+    public String mostrarTodosOsNinjas(){
+        return "Mostrar todos os ninjas: ";
+    }
+
+    // Mostrar Ninjas por ID (READ)
+    @GetMapping("/todosID")
+    public String mostrarTodosOsNinjasPorID(){
+        return "Mostrar ninjas por ID: ";
+    }
+
+    // Alterar dados dos Ninjas (UPDATE)
+    @PutMapping("/alterarID")
+    public String alterarNinjaPorID(){
+        return "Alterar ninja por ID: ";
+    }
+
+    // Deletar Ninja (DELETE)
+    @DeleteMapping("/deletarID")
+    public String deletarNinjaPorID(){
+        return "Ninja deletado por ID: ";
     }
 
 }
