@@ -3,7 +3,7 @@ package dev.java10x.CadastroDeNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping // Define qual rota (URL) será usada para acessar a classe ou métod0.
+@RequestMapping("/ninjas") // Define qual rota (URL) será usada para acessar a classe ou métod0.
 // assim evitando repetiçao como no exemplo abaixo /boasvindas. rota única.
 
 public class NinjaController {
@@ -21,19 +21,19 @@ public class NinjaController {
     }
 
     // Mostrar todos os ninjas (READ)
-    @GetMapping("/todos")
+    @GetMapping("/listar")
     public String mostrarTodosOsNinjas(){
         return "Mostrar todos os ninjas: ";
     }
 
     // Mostrar Ninjas por ID (READ)
-    @GetMapping("/todosID")
+    @GetMapping("/listarID")
     public String mostrarTodosOsNinjasPorID(){
         return "Mostrar ninjas por ID: ";
     }
 
     // Alterar dados dos Ninjas (UPDATE)
-    @PutMapping("/alterarID")
+    @PutMapping("/alterar")
     public String alterarNinjaPorID(){
         return "Alterar ninja por ID: ";
     }
