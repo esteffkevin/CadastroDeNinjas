@@ -34,10 +34,11 @@ public class NinjaController {
         return ninjaService.listarNinjas();
     }
 
+    //localhost:8080/listar/{id}
     // Mostrar Ninjas por ID (READ)
-    @GetMapping("/listarID")
-    public String mostrarTodosOsNinjasPorID(){
-        return "Mostrar ninjas por ID: ";
+    @GetMapping("/listar/{id}")
+    public NinjaModel listarNinjasPorID(@PathVariable Long id){//PathVariable a variavel vai ser parte do caminho.
+        return ninjaService.listarNinjasPorID(id);
     }
 
     // Alterar dados dos Ninjas (UPDATE)
