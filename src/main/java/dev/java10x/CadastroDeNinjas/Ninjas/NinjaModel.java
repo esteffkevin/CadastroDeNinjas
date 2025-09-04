@@ -35,7 +35,6 @@ public class NinjaModel {
     //@ManyToOne
     //Na classe NinjaModel, MUITOS NINJAS vão ter UMA ÚNICA missao.
     @ManyToOne
-
     // @JoinColumn para a criacao de uma nova coluna para a Foreign Key (FK)
     @JoinColumn(name = "missoes_id")
     private MissoesModel missoes;
