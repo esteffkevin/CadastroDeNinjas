@@ -32,4 +32,9 @@ public class NinjaService {
     public NinjaModel criarNinja(NinjaModel ninja){
         return ninjaRepository.save(ninja); // .save = INSERT INTO basicamente
     }
+
+    //Deletar um ninja - Tem que ser um metodo VOID
+    public void deletarNinjaPorID(Long id){
+        ninjaRepository.deleteById(id);
+    }
 }
