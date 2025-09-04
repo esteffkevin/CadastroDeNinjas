@@ -20,11 +20,16 @@ public class NinjaService {
         return ninjaRepository.findAll();
     }
 
-    // Listar todos os ninjas por ID
+    // Metodo Listar todos os ninjas por ID
     // O usuário vai passar um ID pra procura = Long id
     public NinjaModel listarNinjasPorID(Long id){
         //O ninja por existir OU nao (Optional)
         Optional<NinjaModel> ninjaPorID = ninjaRepository.findById(id);
         return ninjaPorID.orElse(null);
+    }
+
+    // Criar um novo ninja
+    public NinjaModel criarNinja(NinjaModel ninja){
+        return ninjaRepository.save(ninja); // .save = INSERT INTO basicamente
     }
 }

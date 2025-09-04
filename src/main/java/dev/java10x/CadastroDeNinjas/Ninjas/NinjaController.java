@@ -23,9 +23,10 @@ public class NinjaController {
 
     // CRUD (Create, Read, Update, Read)
     // Adicionar Ninja (CREATE)
+    //"Input do usuario e jogando no banco de dados"
     @PostMapping("/criar")
-    public String criarNinja() {
-        return "Ninja criado: ";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+        return ninjaService.criarNinja(ninja);
     }
 
     // Mostrar todos os ninjas (READ)
