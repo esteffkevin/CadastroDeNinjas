@@ -25,7 +25,7 @@ public class NinjaController {
     // Adicionar Ninja (CREATE)
     //"Input do usuario e jogando no banco de dados"
     @PostMapping("/criar")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja) {
         return ninjaService.criarNinja(ninja);
     }
 

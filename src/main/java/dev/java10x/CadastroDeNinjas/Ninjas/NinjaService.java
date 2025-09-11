@@ -2,17 +2,20 @@ package dev.java10x.CadastroDeNinjas.Ninjas;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
-import java.util.Scanner;
 
 
 @Service
 public class NinjaService {
 
     private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaMapper;
 
     // Iniciar o construtor quando injeta uma dependencia
-    public NinjaService(NinjaRepository ninjaRepository) {
+
+
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
         this.ninjaRepository = ninjaRepository;
+        this.ninjaMapper = ninjaMapper;
     }
 
     // Listar todos os ninjas
@@ -29,8 +32,11 @@ public class NinjaService {
     }
 
     // Criar um novo ninja
-    public NinjaModel criarNinja(NinjaModel ninja){
-        return ninjaRepository.save(ninja); // .save = INSERT INTO basicamente
+    // Ninja Mapeado
+    public NinjaDTO criarNinja(NinjaDTO ninjaDTO){
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+        ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
 
     // Deletar um ninja - Tem que ser um metodo VOID
