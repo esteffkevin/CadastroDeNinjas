@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Entity
-@RequestMapping(name = "tb_missoes")
+@Table(name = "tb_missoes")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
