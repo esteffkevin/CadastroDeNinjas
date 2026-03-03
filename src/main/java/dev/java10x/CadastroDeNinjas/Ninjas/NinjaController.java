@@ -21,9 +21,10 @@ public class NinjaController {
 
     // CRUD (Create, Read, Update, Delete)
     // Adicionar Ninjas (CREATE)
+    // O post faz a serializaçao inversa.
     @PostMapping("/criar")
-    public String criarNinja(){
-        return "Ninja criado: ";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+        return ninjaService.criarNinja(ninja);
     }
 
     // Mostrar todos os ninjas (READ)

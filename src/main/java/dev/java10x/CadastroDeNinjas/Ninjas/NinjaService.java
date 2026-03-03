@@ -22,9 +22,14 @@ public class NinjaService {
     }
 
     // Listar todos os ninjas por ID
-    // O usuário vai passar um iD pra procura. Lond ID neste caso.
+    // O usuário vai passar um iD pra procura. Long ID neste caso.
     public NinjaModel listarNinjasPorId(Long id){
         Optional<NinjaModel> ninjaPorID = ninjaRepository.findById(id);
         return ninjaPorID.orElse(null);
+    }
+
+    // Criar um novo ninja
+    public NinjaModel criarNinja(NinjaModel ninja){
+        return ninjaRepository.save(ninja);
     }
 }
