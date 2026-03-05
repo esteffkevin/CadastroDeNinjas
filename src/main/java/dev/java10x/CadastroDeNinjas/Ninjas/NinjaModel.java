@@ -32,6 +32,9 @@ public class NinjaModel {
     @Column(name = "idade")
     private int idade;
 
+    @Column(name = "rank")
+    private String rank;
+
     // @ManyToOne - um ninja tem uma única missao
     @ManyToOne
     // @JoinColumn para a criaçao de uma nova coluna para a Foreign Key (FK)
