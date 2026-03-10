@@ -23,26 +23,26 @@ public class NinjaController {
     // Adicionar Ninjas (CREATE)
     // O post faz a serializaçao inversa.
     @PostMapping("/criar")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja){
         return ninjaService.criarNinja(ninja);
     }
 
     // Mostrar todos os ninjas (READ)
     @GetMapping("/listar")
-    public List<NinjaModel> listarNinjas(){
+    public List<NinjaDTO> listarNinjas(){
         return ninjaService.listarNinjas();
     }
 
     // localhost:8080/listar/{id}
     // Mostrar Ninjas por ID (READ)
     @GetMapping("/listar/{id}")
-    public NinjaModel listarNinjasPorId(@PathVariable Long id){
+    public NinjaDTO listarNinjasPorId(@PathVariable Long id){
         return ninjaService.listarNinjasPorId(id);
     }
 
     // Alterar dados dos Ninjas (UPDATE)
     @PutMapping("/alterar/{id}")
-    public NinjaModel alterarNinjaPorID(@PathVariable Long id, @RequestBody NinjaModel ninjaAtualizado){
+    public NinjaDTO alterarNinjaPorID(@PathVariable Long id, @RequestBody NinjaDTO ninjaAtualizado){
         return ninjaService.atualizarNinja(id, ninjaAtualizado);
     }
 
