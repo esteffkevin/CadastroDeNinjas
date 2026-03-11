@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Detalhes do Ninja</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f5f7fb;
+            padding:40px;
+        }
+
+        .card{
+
+            background:white;
+            max-width:600px;
+            margin:auto;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.08);
+
+        }
+
+        img{
+
+            display:block;
+            margin:auto;
+            border-radius:50%;
+            margin-bottom:20px;
+
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .info{
+            margin-bottom:10px;
+            font-size:16px;
+        }
+
+        table{
+            width:100%;
+            margin-top:20px;
+            border-collapse:collapse;
+        }
+
+        th{
+            background:#111827;
+            color:white;
+            padding:10px;
+        }
+
+        td{
+            padding:10px;
+            border-bottom:1px solid #eee;
+        }
+
+        .btn-voltar{
+
+            display:inline-block;
+            margin-top:20px;
+            padding:10px 15px;
+            background:#2563eb;
+            color:white;
+            text-decoration:none;
+            border-radius:6px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>Detalhes do Ninja</h1>
+
+<div class="card">
+
+    <img th:src="${ninja.imgUrl}" width="150">
+
+    <h2 th:text="${ninja.nome}"></h2>
+
+    <p class="info">
+        <strong>Email:</strong>
+        <span th:text="${ninja.email}"></span>
+    </p>
+
+    <p class="info">
+        <strong>Idade:</strong>
+        <span th:text="${ninja.idade}"></span>
+    </p>
+
+    <p class="info">
+        <strong>Rank:</strong>
+        <span th:text="${ninja.rank}"></span>
+    </p>
+
+    <h3>Missão</h3>
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Dificuldade</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:if="${ninja.missoes != null}">
+            <td th:text="${ninja.missoes.nome}"></td>
+            <td th:text="${ninja.missoes.dificuldade}"></td>
+        </tr>
+
+        <tr th:if="${ninja.missoes == null}">
+            <td colspan="2">Sem missão cadastrada</td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+    <a class="btn-voltar"
+       th:href="@{/ninjas/ui/listar}">
+        Voltar
+    </a>
+
+</div>
+
+</body>
+</html>
